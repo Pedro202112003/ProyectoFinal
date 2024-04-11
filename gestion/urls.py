@@ -10,7 +10,7 @@ urlpatterns = [
     path('doctores/', views.doctores, name='doctores'),
     path('contactos/', views.contactos, name='contactos'),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('enfermeros/', views.enfermeros, name='enfermeros'), # la parte de entrar al analisis 
-    path('secretario/', views.secretario, name='secretario'),
+    path('menu/', views.menu, name='menu'), # la parte de entrar al analisis 
+    path('analisis/', views.analisis, name='analisis'),
     path('salir/', views.salir, name='salir'),
 ]

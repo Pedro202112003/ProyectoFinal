@@ -4,10 +4,10 @@ from django.contrib.auth import logout
 
 # Create your views here.
 
-#from .models import *
-#from django.http import JsonResponse
-#import json
-#import datetime
+from .models import *
+from django.http import JsonResponse
+import json
+import datetime
 #from .utils import *
 
 # Create your views here.
@@ -35,13 +35,15 @@ def contactos(request):
 
 
 @login_required 
-def enfermeros(request):
+def menu(request):
+    if request.method == 'POST':
+        nombre = Cliente.objects.get_or_create(nombre=nombre)
+        return render(request, 'programa/menu.html')
 
-    return render(request, 'registration/enfermeros.html')
+@login_required
+def analisis(request):
 
-def secretario(request):
-
-    return render(request, 'registration/secretario.html')
+    return render(request, 'programa/analisis.html')
 
 def salir (request):
    logout(request)
