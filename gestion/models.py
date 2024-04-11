@@ -27,7 +27,7 @@ class Analisis(models.Model):
     paciente = models.ForeignKey(Cliente, on_delete=models.SET_NULL, null=True, blank=True)
     fecha = models.DateTimeField(auto_now_add=True)
     realizado = models.BooleanField(default=False, null=True, blank=True)
- #   resultado = models.CharField(max_length=500, null=True)
+    resultado = models.CharField(max_length=500, null=True)
 
      
  

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>{% block title %} {% endblock %}</title>
+        <!--   <link rel="stylesheet" type="text/css" href="">  -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- Site Icons -->
+        <link rel="shortcut icon" href="{%static 'pagina2/images/favicon.ico'}" type="image/x-icon">
+        <link rel="apple-touch-icon" href="{% static 'pagina2/images/apple-touch-icon.png' %}">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'pagina2/css/bootstrap.min.css' %}">
+        <!-- Pogo Slider CSS -->
+        <link rel="stylesheet" href="{% static 'pagina2/css/pogo-slider.min.css' %}">
+        <!-- Site CSS -->
+        <link rel="stylesheet" href="{% static 'pagina2/css/style.css' %}">    
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="{% static 'pagina2/css/responsive.css' %}">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{% static 'pagina2/css/custom.css' %}">
+    
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->       
+        
+    </head>
+    <body >
+        <!-- Start header -->
+        <header class="top-header">
+            <nav class="navbar header-nav navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="{% url 'menu' %}"><img src="{% static 'pagina2/images/logo.png' %}" alt="image"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                        <ul class="navbar-nav">
+                            <li><a class="nav-link" href="{% url 'ingreso' %}">Ingreso</a></li>
+                            <li><a class="nav-link" href="{% url 'analisis' %}">Analisis</a></li>
+                            <li><a class="nav-link" href="{% url 'resultados' %}">Resultados</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                        <ul class="navbar-nav">
+                            <li><a class="nav-link active" href="{% url 'salir' %}">Cerrar Session</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- End header -->
+        {% block content%}
+              
+        {%endblock%}
+    
+        <a href="#" id="scroll-to-top" class="new-btn-d br-2"><i class="fa fa-angle-up"></i></a>
+
+        <!-- ALL JS FILES -->
+        <script src="{% static 'pagina2/js/jquery.min.js' %}"></script>
+        <script src="{% static 'pagina2/js/popper.min.js' %}"></script>
+        <script src="{% static 'pagina2/js/bootstrap.min.js' %}"></script>
+        <!-- ALL PLUGINS -->
+        <script src="{% static 'pagina2/js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'pagina2/js/jquery.pogo-slider.min.js' %}"></script> 
+        <script src="{% static 'pagina2/js/slider-index.js' %}"></script>
+        <script src="{% static 'pagina2/js/smoothscroll.js' %}"></script>
+        <script src="{% static 'pagina2/js/TweenMax.min.js' %}"></script>
+        <script src="{% static 'pagina2/js/main.js' %}"></script>
+        <script src="{% static 'pagina2/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'pagina2/js/form-validator.min.js' %}"></script>
+        <script src="{% static 'pagina2/js/contact-form-script.js' %}"></script>
+        <script src="{% static 'pagina2/js/isotope.min.js' %}"></script>	
+        <script src="{% static 'pagina2/js/images-loded.min.js' %}"></script>	
+        <script src="{% static 'pagina2/js/custom.js' %}"></script>
+
+
+
+    </body>
+
+</html>

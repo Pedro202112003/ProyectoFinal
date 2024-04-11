@@ -4,9 +4,10 @@
     <head>
         <title>{% block title %} {% endblock %}</title>
               <!--   <link rel="stylesheet" type="text/css" href="">  -->
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/pagina1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <link rel="stylesheet" type="text/css" href="{% static 'pagina1/css/open-iconic-bootstrap.min.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" type="text/css" href="{% static 'pagina1/css/open-iconic-bootstrap.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'pagina1/css/animate.css' %}">
         
         <link rel="stylesheet" type="text/css" href="{% static 'pagina1/css/owl.carousel.min.css' %}">
@@ -26,10 +27,10 @@
 
 
     </head>
-    <body>
+    <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
         <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
             <div class="container">
-              <a class="navbar-brand" href="{% url 'inicio' %}">Proyecto Final</a>
+              <a class="navbar-brand" href="{% url 'inicio' %}">Proyecto FINALCONTAC</a>
               <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
               </button>
@@ -40,13 +41,12 @@
                   <li class="nav-item"><a href="{% url 'nosotros' %}" class="nav-link"><span>Nosotros</span></a></li>
                   <li class="nav-item"><a href="{% url 'servicios' %}" class="nav-link"><span>Servicios</span></a></li>
                   <li class="nav-item"><a href="{% url 'doctores' %}" class="nav-link"><span>Doctores</span></a></li>
-                  <li class="nav-item"><a href="{% url 'contactos' %}" class="nav-link"><span>Contactos</span></a></li>
+                  <li class="nav-item"><a href="{% url 'contactos' %}" class="nav-link"><span>Contacto</span></a></li>
                 </ul>
               </div>
               <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav nav ml-auto">
-                 
-                  <li class="nav-item cta mr-md-2"><a href="{% url 'menu' %}" class="nav-link">login</a></li>
+                  <li class="nav-item cta mr-md-2"><a href="{% url 'menu' %}" class="nav-link">Ingresar</a></li>
                 </ul>
               </div>
             </div>
@@ -55,9 +55,9 @@
               
           {%endblock%}
     
-    <!-- loader -->
+    <!-- loader 
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
+    -->
 
   <script type="text/javascript" src="{% static 'pagina1/js/jquery.min.js'%}"></script>
   <script type="text/javascript" src="{% static 'pagina1/js/jquery-migrate-3.0.1.min.js'%}"></script>
@@ -76,9 +76,5 @@
   <script type="text/javascript" src="{% static 'pagina1/js/main.js'%}"></script>      
 
     </body>
-
-
-
-
 
 </html>

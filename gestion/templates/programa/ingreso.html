@@ -1,0 +1,86 @@
+{% extends "general/main2.html"%}
+{% load static %}
+
+{% block title %} Ingreso {% endblock %}
+
+{% block content%}
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+	<!-- Start Appointment -->
+	<div id="appointment" class="appointment-main">
+		<div class="container">
+		
+			<div class="row justify-content-center">
+				<div class="col-lg-6 col-md-6">
+					<div class="well-block">
+                        <div class="well-title ">
+                            <h2>Ingreso de Datos</h2>
+                        </div>
+                        <form method="post">
+                            {% csrf_token %}
+                            <!-- Form start -->
+                            <div class="row ">
+                                <!-- Text input-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="name">Nombre</label>
+                                        <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="apellido">Apellido</label>
+                                        <input id="apellido" name="apellido" type="text" placeholder="Apellido" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="email">Email</label>
+                                        <input id="email" name="email" type="text" placeholder="E-Mail" class="form-control input-md">
+                                    </div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="telefono">Telefono</label>
+                                        <input id="telefono" name="telefono" type="text" placeholder="Telefono" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Select Basic -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="tipo">Tipo Analisis</label>
+                                        <select id="tipo" name="tipo" class="form-control">
+                                            <option value="mamografia">Mamografia</option>
+											<option value="biopsia de piel">Biopsia de Piel</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Button -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <button type="submit" value="registro" id="registro" name="registro" class="new-btn-d br-2">Registrar</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                        <!-- form end -->
+                    </div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- End Appointment -->
+{%endblock%}
