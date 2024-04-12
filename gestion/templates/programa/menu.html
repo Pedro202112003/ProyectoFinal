@@ -9,30 +9,30 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="pogoSlider" id="js-main-slider">
-                    <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background-image:url(images/slider-01.jpg);">
+                    <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background-image:url('{% static 'pagina2/images/slider-01.jpg' %}');">
                         <div class="lbox-caption pogoSlider-slide-element">
                             <div class="lbox-details">
-                                <h1>Welcome to Health Lab</h1>
-                                <p>Fusce convallis ante id purus sagittis malesuada. Sed erat ipsum </p>
-                                <a href="#" class="btn">Contact Us</a>
+                                <h1>Bienvenido</h1>
+                                <p>Quieres ingresar a un cliente</p>
+                                <a href="{% url 'ingreso' %}" class="btn">Ingresar</a>
                             </div>
                         </div>
                     </div>
-                    <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background-image:url(images/slider-02.jpg);">
+                    <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background-image:url('{% static 'pagina2/images/slider-02.jpg' %}');">
                         <div class="lbox-caption pogoSlider-slide-element">
                             <div class="lbox-details">
-                                <h1>We are Expert in The Field of Health Lab</h1>
-                                <p>Fusce convallis ante id purus sagittis malesuada. Sed erat ipsum</p>
-                                <a href="#appointment" class="btn">Appointment</a>
+                                <h1>Analisis</h1>
+                                <p>Analizar las imagenes de los pacientes faltantes</p>
+                                <a href="{% url 'analisis' %}"class="btn">Analizar</a>
                             </div>
                         </div>
                     </div>
-                    <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background-image:url(images/slider-03.jpg);">
+                    <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background-image:url('{% static 'pagina2/images/slider-03.jpg' %}');">
                         <div class="lbox-caption pogoSlider-slide-element">
                             <div class="lbox-details">
-                                <h1>Welcome to Health Lab</h1>
-                                <p>Fusce convallis ante id purus sagittis malesuada. Sed erat ipsum </p>
-                                <a href="#" class="btn">Contact Us</a>
+                                <h1>Resultados</h1>
+                                <p>Ver el resultado de los analisis realizados  </p>
+                                <a href="{% url 'resultados' %}" class="btn">Ver</a>
                             </div>
                         </div>
                         

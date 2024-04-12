@@ -1,4 +1,5 @@
 from django.db import models
+
 #from django.contrib.auth.models import User
 
 # Create your models here.
@@ -9,6 +10,7 @@ class Cliente(models.Model):
     email=models.EmailField(null=True, blank=True)
     telefono=models.CharField(max_length=8, null=True)
     tipo=models.CharField(max_length=15 , null=False) #tipo de anailis
+    realizado = models.BooleanField(default=False, null=True, blank=True)
     imagen  = models.ImageField(null=True, blank=True)
    # cui=models.FloatField(null=False)
    # nacimineto = models.DateTimeField(blank=False)
@@ -26,11 +28,7 @@ class Cliente(models.Model):
 class Analisis(models.Model):
     paciente = models.ForeignKey(Cliente, on_delete=models.SET_NULL, null=True, blank=True)
     fecha = models.DateTimeField(auto_now_add=True)
-    realizado = models.BooleanField(default=False, null=True, blank=True)
     resultado = models.CharField(max_length=500, null=True)
-
-     
- 
 
     def __str__(self):
         return self.paciente

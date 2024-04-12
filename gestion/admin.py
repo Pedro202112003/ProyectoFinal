@@ -5,8 +5,8 @@ from .models import *
 # Register your models here.
 
 
-#class clientesadmin(admin.ModelAdmin):
-   # list_display=("nombre", "apellido", "email", "telefono", "tipo")
+class clientesadmin(admin.ModelAdmin):
+    list_display=("nombre", "apellido", "email", "telefono", "tipo", "imagen")
     #search_fields=("usuario", "nombre", "direccion", "email", "telefono")
 
 #class analisisadmin(admin.ModelAdmin):

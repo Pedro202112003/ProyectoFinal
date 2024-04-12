@@ -23,7 +23,7 @@
                         <div class="well-title ">
                             <h2>Ingreso de Datos</h2>
                         </div>
-                        <form method="post">
+                        <form method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             <!-- Form start -->
                             <div class="row ">
@@ -48,7 +48,6 @@
                                         <input id="email" name="email" type="text" placeholder="E-Mail" class="form-control input-md">
                                     </div>
                                 </div>
-
                                 <!-- Text input-->
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -64,6 +63,13 @@
                                             <option value="mamografia">Mamografia</option>
 											<option value="biopsia de piel">Biopsia de Piel</option>
                                         </select>
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label " for="imagen">Cargar Imagen</label>
+                                        <input id="imagen" name="imagen" type="file" placeholder="Cargar imagen" accept="image/*" class="form-control input-md new-btn-d br-2">
                                     </div>
                                 </div>
                                 <!-- Button -->

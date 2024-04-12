@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
+from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
 
@@ -37,7 +38,6 @@ def contactos(request):
 def menu(request):
     
     return render(request, 'programa/menu.html')
-
 @login_required
 @csrf_protect
 def ingreso(request):
@@ -47,18 +47,28 @@ def ingreso(request):
         emailIngresadoForm = request.POST.get('email')
         telefonoIngresadoForm = request.POST.get('telefono')
         tipoIngresadoForm = request.POST.get('tipo')
+        imagenIngresadoForm =request.FILES.get('imagen')
         # Obtén el resto de los datos del formulario de la misma manera
         
         # Crear una instancia de tu modelo con los datos recibidos
-        guardar = Cliente(nombre=nombreIngresadoForm, apellido = apellidoIngresadoForm, email=emailIngresadoForm, telefono = telefonoIngresadoForm, tipo=tipoIngresadoForm)
+        guardar = Cliente(
+            nombre=nombreIngresadoForm, 
+            apellido = apellidoIngresadoForm, 
+            email=emailIngresadoForm, 
+            telefono = telefonoIngresadoForm, 
+            tipo=tipoIngresadoForm, 
+            imagen = imagenIngresadoForm
+        )
+        
         guardar.save()  # Guardar la instancia en la base de datos
         messages.success(request, 'El ingreso se realizó correctamente.')
     return render(request, 'programa/ingreso.html')
 
 @login_required
 def analisis(request):
-
-    return render(request, 'programa/analisis.html')
+    consulta = Cliente.objects.filter(realizado = 'False')
+    context = {'realizados': consulta}
+    return render(request, 'programa/analisis.html',context)
 
 @login_required
 def resultados(request):
